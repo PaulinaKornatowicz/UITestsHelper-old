@@ -2,6 +2,31 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'UITestsHelper'   // Has to be same as your library module name
+
+    publishedGroupId = 'com.paulinakornatowicz.uitestshelper'
+    libraryName = 'UI Tests Helper'
+    artifact = 'UITestsHelper'     // Has to be same as your library module name
+
+    libraryDescription = 'Simple library with helper methods and rules for Android UI testing'
+
+    // Your github repo link
+    siteUrl = 'https://github.com/PaulinaKornatowicz/UITestsHelper'
+    gitUrl = 'https://github.com/PaulinaKornatowicz/UITestsHelper.git'
+
+    libraryVersion = '0.1.0'
+
+    developerId = 'paulinakornatowicz'
+    developerName = 'Paulina Kornatowicz'
+    developerEmail = 'paulina.kornatowicz@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
@@ -37,3 +62,10 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }
+
+tasks.withType(Javadoc).all {
+    enabled = false
+}
+
+apply from: 'https://raw.githubusercontent.com/PaulinaKornatowicz/UITestsHelper/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/PaulinaKornatowicz/UITestsHelper/master/bintrayv1.gradle'
