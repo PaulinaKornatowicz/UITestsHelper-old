@@ -1,0 +1,27 @@
+# IntelliJ 
+../idea/**
+../idea
+.idea/
+*.iml
+
+# MAT
+captures/
+
+# Gradle 
+.gradle/
+#gradle/wrapper/*.jar
+local.properties
+
+# Build output.
+build/
+
+# Windows thumbnails file
+Thumbs.db
+
+# Mac clutter 
+.DS_Store
+
+# Crashytics
+app/src/main/assets/crashlytics-build.properties
+app/src/main/res/values/com_crashlytics_export_strings.xml
+
