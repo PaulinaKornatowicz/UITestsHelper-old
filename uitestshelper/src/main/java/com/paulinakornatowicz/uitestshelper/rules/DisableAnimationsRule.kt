@@ -4,7 +4,7 @@ import com.paulinakornatowicz.uitestshelper.helpermethods.executeCommand
 import org.junit.rules.TestWatcher
 import org.junit.runner.Description
 
-class DisableAnimationsRule: TestWatcher() {
+open class DisableAnimationsRule: TestWatcher() {
 
     override fun starting(description: Description?) {
         disableAnimations()
