@@ -1,10 +1,8 @@
-package com.paulinakornatowicz.uitestshelper.idlingresources
+package com.paulinakornatowicz.uitestshelperidlingresource
 
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 
-// FIXME this should be accessed from another package so that main uitesthelper is a dependency
-//  for androidTest only (just like espresso-idlingresources)
 interface IdleStateReceiver {
 
     fun onAppIsBusy(message: String) {

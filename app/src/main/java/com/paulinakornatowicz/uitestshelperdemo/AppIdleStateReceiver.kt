@@ -1,6 +1,6 @@
-package com.paulinakornatowicz.uitestshelper
+package com.paulinakornatowicz.uitestshelperdemo
 
-import com.paulinakornatowicz.uitestshelper.idlingresources.IdleStateReceiver
+import com.paulinakornatowicz.uitestshelperidlingresource.IdleStateReceiver
 
 class AppIdleStateReceiver: IdleStateReceiver {
 

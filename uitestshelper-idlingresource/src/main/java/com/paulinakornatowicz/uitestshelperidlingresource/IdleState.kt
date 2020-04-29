@@ -1,4 +1,4 @@
-package com.paulinakornatowicz.uitestshelper.idlingresources
+package com.paulinakornatowicz.uitestshelperidlingresource
 
 import java.io.Serializable
 

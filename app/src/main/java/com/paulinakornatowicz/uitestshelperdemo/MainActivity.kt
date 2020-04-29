@@ -1,4 +1,4 @@
-package com.paulinakornatowicz.uitestshelper
+package com.paulinakornatowicz.uitestshelperdemo
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,7 +10,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        appIdleStateReceiver = AppIdleStateReceiver()
+        appIdleStateReceiver =
+            AppIdleStateReceiver()
         setContentView(R.layout.activity_main)
     }
 
@@ -19,6 +20,6 @@ class MainActivity : AppCompatActivity() {
         appIdleStateReceiver.onBusyOperationStarted()
         Handler().postDelayed({
             appIdleStateReceiver.onBusyOperationEnded()
-        }, 5000L)
+        }, 15000L)
     }
 }

@@ -1,3 +1,4 @@
 rootProject.name='UI Tests Helper'
 include ':app'
 include ':uitestshelper'
+include ':uitestshelper-idlingresource'

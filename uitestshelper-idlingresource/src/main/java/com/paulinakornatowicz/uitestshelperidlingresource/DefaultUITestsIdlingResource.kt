@@ -1,4 +1,4 @@
-package com.paulinakornatowicz.uitestshelper.idlingresources
+package com.paulinakornatowicz.uitestshelperidlingresource
 
 import android.util.Log
 import androidx.test.espresso.IdlingResource

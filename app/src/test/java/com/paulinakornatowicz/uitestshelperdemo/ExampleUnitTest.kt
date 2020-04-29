@@ -1,4 +1,4 @@
-package com.paulinakornatowicz.uitestshelper
+package com.paulinakornatowicz.uitestshelperdemo
 
 import org.junit.Test
 

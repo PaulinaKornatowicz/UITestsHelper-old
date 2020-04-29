@@ -1,9 +1,9 @@
 package com.paulinakornatowicz.uitestshelper.rules
 
 import androidx.test.espresso.IdlingRegistry
-import com.paulinakornatowicz.uitestshelper.idlingresources.Idle
-import com.paulinakornatowicz.uitestshelper.idlingresources.DefaultUITestsIdlingResource
-import com.paulinakornatowicz.uitestshelper.idlingresources.Busy
+import com.paulinakornatowicz.uitestshelperidlingresource.Busy
+import com.paulinakornatowicz.uitestshelperidlingresource.DefaultUITestsIdlingResource
+import com.paulinakornatowicz.uitestshelperidlingresource.Idle
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.junit.rules.TestWatcher
