@@ -69,5 +69,5 @@ task deployIdleResource(type: GradleBuild) {
     tasks = ['install', 'bintrayUpload']
 }
 
-apply from: '../assembleLibrary.gradle'
+apply from: '../assembleLibraryIdling.gradle'
 apply from: '../bintrayDeployment.gradle'

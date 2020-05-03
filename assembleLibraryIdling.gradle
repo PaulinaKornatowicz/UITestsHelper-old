@@ -2,7 +2,7 @@ apply plugin: 'com.github.dcendents.android-maven'
 
 group = publishedGroupId                               // Maven Group ID for the artifact
 
-println("install UITestsHelper")
+println("install UITestsHelper - idling resources")
 install {
     repositories.mavenInstaller {
         // This generates POM.xml with proper parameters
@@ -45,20 +45,14 @@ install {
                         scope 'androidTest'
                     }
                     dependency {
-                        groupId 'com.paulinakornatowicz.uitestshelper'
-                        artifactId 'uitestshelper-idlingresource'
-                        version '0.1.1'
-                        scope 'androidTest'
-                    }
-                    dependency {
-                        groupId 'androidx.test.espresso'
-                        artifactId 'espresso-core'
+                        groupId 'org.greenrobot'
+                        artifactId 'eventbus'
                         version '3.2.0'
                         scope 'androidTest'
                     }
                     dependency {
                         groupId 'androidx.test.espresso'
-                        artifactId 'espresso-contrib'
+                        artifactId 'espresso-core'
                         version '3.2.0'
                         scope 'androidTest'
                     }
