@@ -2,14 +2,13 @@ package com.paulinakornatowicz.uitestshelperdemo
 
 import android.content.Intent
 import androidx.test.core.app.ApplicationProvider
-import androidx.test.espresso.Espresso.onView
-import androidx.test.espresso.assertion.ViewAssertions.matches
-import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.rule.ActivityTestRule
+import com.paulinakornatowicz.uitestshelper.matchers.visibility.assertViewDisplayed
+import com.paulinakornatowicz.uitestshelper.matchers.visibility.assertViewDoesNotExist
+import com.paulinakornatowicz.uitestshelper.matchers.visibility.assertViewNotDisplayed
 import com.paulinakornatowicz.uitestshelper.rules.DisableAnimationsRule
 import com.paulinakornatowicz.uitestshelper.rules.IdlingResourcesRule
-import com.paulinakornatowicz.uitestshelperdemo.MainActivity
 import org.junit.After
 import org.junit.Before
 import org.junit.Rule
@@ -47,7 +46,11 @@ class MainActivityTest {
 
     @Test
     fun mainActivityTest() {
-        onView(withId(R.id.helloWorldText)).check(matches(isDisplayed()))
+        assertViewDisplayed(R.id.helloWorldText)
+        assertViewNotDisplayed(R.id.invisibleHelloWorldText)
+        assertViewNotDisplayed(R.id.goneHelloWorldText)
+
+        assertViewDoesNotExist(R.id.dummyTextView)
     }
 
     @After

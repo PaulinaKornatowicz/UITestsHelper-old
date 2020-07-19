@@ -46,7 +46,7 @@ fun assertTextAtPositionForItemInRecyclerView(
     )
 }
 
-fun assertViewDisplayedForItemInRecyclerView(recyclerId: Int, position: Int, viewId: Int) {
+fun assertViewDisplayedAtPositionForItemInRecyclerView(recyclerId: Int, position: Int, viewId: Int) {
     onView(withId(recyclerId)).check(
         matches(
             atPosition(position, hasDescendant(allOf(withId(viewId), isDisplayed())))

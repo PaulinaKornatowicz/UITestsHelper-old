@@ -11,6 +11,11 @@ fun assertText(id: Int, expectedTextValue: String) {
     onView(withId(id)).check(matches(withText(expectedTextValue)))
 }
 
-fun assertSpinnerText(id: Int, expectedValue: String) {
-    onView(withId(id)).check(matches(withSpinnerText(containsString(expectedValue))))
+fun assertSpinnerText(id: Int, expectedTextValue: String) {
+    onView(withId(id)).check(matches(withSpinnerText(containsString(expectedTextValue))))
+}
+
+fun assertSnackbarText(expectedTextValue: String) {
+    onView(withId(com.google.android.material.R.id.snackbar_text))
+        .check(matches(withText(expectedTextValue)))
 }
