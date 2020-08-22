@@ -47,7 +47,7 @@ install {
                     dependency {
                         groupId 'com.paulinakornatowicz.uitestshelper'
                         artifactId 'uitestshelper-idlingresource'
-                        version '0.1.1'
+                        version '0.1.4'
                         scope 'androidTest'
                     }
                     dependency {

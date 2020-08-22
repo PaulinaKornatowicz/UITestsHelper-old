@@ -15,7 +15,7 @@ class MockWebServerRule(val testName: () -> String, dispatcher: Dispatcher? = nu
 
     private val serverDispatcher = dispatcher ?: object : Dispatcher() {
         override fun dispatch(request: RecordedRequest): MockResponse =
-            MockServerHelper.dispatch(request)
+            MockServerHelper.dispatch(testName(), request)
     }
 
     override fun starting(description: Description?) {

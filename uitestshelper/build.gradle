@@ -16,7 +16,7 @@ ext {
     siteUrl = 'https://github.com/PaulinaKornatowicz/UITestsHelper'
     gitUrl = 'https://github.com/PaulinaKornatowicz/UITestsHelper.git'
 
-    libraryVersion = '0.1.12'
+    libraryVersion = '0.1.16'
 
     developerId = 'paulinakornatowicz'
     developerName = 'Paulina Kornatowicz'
@@ -35,7 +35,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
-        versionName "0.1.12"
+        versionName "0.1.16"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
