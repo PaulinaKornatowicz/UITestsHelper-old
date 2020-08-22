@@ -65,7 +65,7 @@ install {
                     dependency {
                         groupId 'com.squareup.okhttp3'
                         artifactId 'mockwebserver'
-                        version '4.8.0'
+                        version '4.3.1'
                         scope 'androidTest'
                     }
                 }

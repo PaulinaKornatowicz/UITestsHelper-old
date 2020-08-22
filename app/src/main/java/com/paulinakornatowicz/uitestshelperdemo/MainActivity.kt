@@ -10,8 +10,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        appIdleStateReceiver =
-            AppIdleStateReceiver()
+        appIdleStateReceiver = AppIdleStateReceiver()
         setContentView(R.layout.activity_main)
     }
 
@@ -20,6 +19,6 @@ class MainActivity : AppCompatActivity() {
         appIdleStateReceiver.onBusyOperationStarted()
         Handler().postDelayed({
             appIdleStateReceiver.onBusyOperationEnded()
-        }, 15000L)
+        }, 3000L)
     }
 }

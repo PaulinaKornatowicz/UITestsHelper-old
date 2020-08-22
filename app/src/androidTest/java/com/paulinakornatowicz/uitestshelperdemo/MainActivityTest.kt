@@ -1,6 +1,7 @@
 package com.paulinakornatowicz.uitestshelperdemo
 
 import android.content.Intent
+import androidx.test.core.app.ActivityScenario
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.rule.ActivityTestRule
@@ -28,19 +29,12 @@ class MainActivityTest {
         "MainActivityTest"
     }
 
-    @Rule
-    @JvmField
-    val activityRule = ActivityTestRule(MainActivity::class.java)
+    private lateinit var accountViewScenario: ActivityScenario<MainActivity>
 
 
     @Before
     fun beforeSetup() {
-        activityRule.launchActivity(
-            Intent(
-                ApplicationProvider.getApplicationContext(),
-                MainActivity::class.java
-            )
-        )
+        accountViewScenario = ActivityScenario.launch(Intent(ApplicationProvider.getApplicationContext(), MainActivity::class.java))
     }
 
 
@@ -49,12 +43,6 @@ class MainActivityTest {
         assertViewDisplayed(R.id.helloWorldText)
         assertViewNotDisplayed(R.id.invisibleHelloWorldText)
         assertViewNotDisplayed(R.id.goneHelloWorldText)
-
         assertViewDoesNotExist(R.id.dummyTextView)
-    }
-
-    @After
-    fun afterSetup() {
-        activityRule.finishActivity()
     }
 }
