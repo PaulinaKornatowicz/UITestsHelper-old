@@ -7,18 +7,21 @@ import android.graphics.drawable.Drawable
 import android.graphics.drawable.VectorDrawable
 import android.view.View
 import android.widget.ImageView
+import androidx.annotation.ColorRes
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.contrib.RecyclerViewActions
 import androidx.test.espresso.matcher.BoundedMatcher
+import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.isChecked
 import androidx.test.espresso.matcher.ViewMatchers.isEnabled
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.espresso.matcher.ViewMatchers.hasDescendant
+import androidx.test.espresso.matcher.ViewMatchers.hasTextColor
 import org.hamcrest.CoreMatchers.allOf
 import org.hamcrest.CoreMatchers.not
 import org.hamcrest.Description
@@ -46,7 +49,11 @@ fun assertTextAtPositionForItemInRecyclerView(
     )
 }
 
-fun assertViewDisplayedAtPositionForItemInRecyclerView(recyclerId: Int, position: Int, viewId: Int) {
+fun assertViewDisplayedAtPositionForItemInRecyclerView(
+    recyclerId: Int,
+    position: Int,
+    viewId: Int
+) {
     onView(withId(recyclerId)).check(
         matches(
             atPosition(position, hasDescendant(allOf(withId(viewId), isDisplayed())))
@@ -108,6 +115,44 @@ fun assertDrawableAtPositionForItemInRecyclerView(
             atPosition(
                 position,
                 hasDescendant(allOf(withId(viewId), withDrawable(drawable, drawableColor)))
+            )
+        )
+    )
+}
+
+fun assertViewBackgroundColorAtPositionForItemInRecyclerView(
+    recyclerId: Int,
+    position: Int,
+    viewId: Int,
+    drawable: Int
+) {
+    onView(withId(recyclerId)).check(
+        matches(
+            atPosition(
+                position, hasDescendant(
+                    allOf(withId(viewId), ViewMatchers.hasBackground(drawable))
+                )
+            )
+        )
+    )
+}
+
+fun assertViewTextColorAtPositionForItemInRecyclerView(
+    recyclerId: Int,
+    position: Int,
+    viewId: Int,
+    @ColorRes color: Int
+) {
+    onView(withId(recyclerId)).check(
+        matches(
+            atPosition(
+                position,
+                hasDescendant(
+                    allOf(
+                        withId(viewId),
+                        hasTextColor(color)
+                    )
+                )
             )
         )
     )

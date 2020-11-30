@@ -68,6 +68,18 @@ install {
                         version '4.3.1'
                         scope 'androidTest'
                     }
+                    dependency {
+                        groupId 'com.squareup.moshi'
+                        artifactId 'moshi'
+                        version '1.9.3'
+                        scope 'androidTest'
+                    }
+                    dependency {
+                        groupId 'com.squareup.moshi'
+                        artifactId 'moshi-kotlin'
+                        version '1.9.3'
+                        scope 'androidTest'
+                    }
                 }
             }
         }

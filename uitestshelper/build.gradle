@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 
 ext {
@@ -16,7 +17,7 @@ ext {
     siteUrl = 'https://github.com/PaulinaKornatowicz/UITestsHelper'
     gitUrl = 'https://github.com/PaulinaKornatowicz/UITestsHelper.git'
 
-    libraryVersion = '0.1.16'
+    libraryVersion = '0.1.18.1'
 
     developerId = 'paulinakornatowicz'
     developerName = 'Paulina Kornatowicz'
@@ -35,7 +36,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
-        versionName "0.1.16"
+        versionName "0.1.18.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
@@ -63,6 +64,9 @@ dependencies {
     implementation 'com.paulinakornatowicz.uitestshelper:uitestshelper-idlingresource:0.1.4'
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'com.squareup.okhttp3:mockwebserver:4.3.1'
+    implementation 'com.squareup.moshi:moshi:1.9.3'
+    implementation "com.squareup.moshi:moshi-kotlin:1.9.3"
+    kapt 'com.squareup.moshi:moshi-kotlin-codegen:1.9.3'
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
