@@ -1,0 +1,40 @@
+// use gradlew uitestshelper-idlingresource:bintrayUpload or uitesthelper:bintrayUpload to trigger library publication
+def libraryGroupId = 'com.paulinakornatowicz.uitestshelper'
+def libraryArtifactId = ARTIFACT_ID
+def libraryVersion = VERSION
+
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                from components.release
+                groupId = libraryGroupId
+                artifactId = libraryArtifactId
+                version = libraryVersion
+            }
+        }
+    }
+}
+
+def properties = new Properties()
+properties.load(new FileInputStream("local.properties"))
+
+bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+    publications = ['release']
+    override = true
+    pkg {
+        repo = 'maven'
+        name = libraryArtifactId
+        desc = DESCRIPTION
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/PaulinaKornatowicz/UITestsHelper'
+        publicDownloadNumbers = true
+        version {
+            name = libraryVersion
+            released = new Date()
+        }
+    }
+}

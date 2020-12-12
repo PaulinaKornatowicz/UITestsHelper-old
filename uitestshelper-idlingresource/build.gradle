@@ -1,6 +1,8 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'maven-publish'
 
 ext {
     bintrayRepo = 'maven'
@@ -16,7 +18,7 @@ ext {
     siteUrl = 'https://github.com/PaulinaKornatowicz/UITestsHelper'
     gitUrl = 'https://github.com/PaulinaKornatowicz/UITestsHelper.git'
 
-    libraryVersion = '0.1.4'
+    libraryVersion = '0.1.6.2'
 
     developerId = 'paulinakornatowicz'
     developerName = 'Paulina Kornatowicz'
@@ -55,19 +57,16 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.core:core-ktx:1.2.0'
-    implementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation 'org.greenrobot:eventbus:3.2.0'
     testImplementation 'junit:junit:4.13'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
 tasks.withType(Javadoc).all {
     enabled = false
 }
 
-task deployIdleResource(type: GradleBuild) {
-    tasks = ['install', 'bintrayUpload']
-}
 
-apply from: '../assembleLibraryIdling.gradle'
-apply from: '../bintrayDeployment.gradle'
+
+apply from: '../publish.gradle'
